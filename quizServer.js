@@ -6,13 +6,13 @@ const PORT = 3210;
 http.createServer((req, res) => {
   if (req.method == "GET") {
     const file = req.url.slice(1);
-    fs.readFile((error, data) => {
+    fs.readFile(file, (error, data) => {
       if (error) {
         res.writeHead(404, {"Content-Type": "text/plain"});
         res.write("Resource not found")
         res.end()
       } else {
-        const extension = req.url.split(".")[1];
+        const extension = file.split(".")[1];
         switch (extension) {
           case "html":
             res.writeHead(200, {"Content-Type": "text/html"});
