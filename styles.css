@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 :root {
   font-family: "Balsamiq sans", sans-serif;
+  background: url("./background.png");
+  color: gold;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

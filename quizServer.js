@@ -5,7 +5,8 @@ const PORT = 3210;
 
 http.createServer((req, res) => {
   if (req.method == "GET") {
-    const file = req.url.slice(1);
+    // If root url is requested, send people to home page
+    const file = (req.url === "/") ? "home.html" : req.url.slice(1);
     fs.readFile(file, (error, data) => {
       if (error) {
         res.writeHead(404, {"Content-Type": "text/plain"});
@@ -17,14 +18,17 @@ http.createServer((req, res) => {
           case "html":
             res.writeHead(200, {"Content-Type": "text/html"});
             break;
-          case "ico":
-            res.writeHead(200, {"Content-Type": "image/x-icon"});
+          case "css":
+            res.writeHead(200, {"Content-Type": "text/css"});
             break;
           case "js":
             res.writeHead(200, {"Content-Type": "application/javascript"});
             break;
-          case "css":
-            res.writeHead(200, {"Content-Type": "text/css"});
+          case "ico":
+            res.writeHead(200, {"Content-Type": "image/x-icon"});
+            break;
+          case "png":
+            res.writeHead(200, {"Content-Type": "image/png"});
             break;
           default:
             res.writeHead(200, {"Content-Type": "text/plain"});
