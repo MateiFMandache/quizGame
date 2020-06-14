@@ -7,95 +7,95 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="56.091671mm"
-   height="56.091671mm"
-   viewBox="0 0 56.091671 56.091671"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="background.svg"
    inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
-   sodipodi:docname="background.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 56.091671 56.091671"
+   height="56.091671mm"
+   width="56.091671mm">
   <defs
      id="defs2">
     <clipPath
-       id="clipPath78"
-       clipPathUnits="userSpaceOnUse">
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath78">
       <rect
-         transform="rotate(-45.131072)"
-         style="fill:#000000;fill-opacity:1;stroke-width:0.200504"
-         id="rect80"
-         width="56.091667"
+         y="11.641666"
+         x="11.641666"
          height="56.091667"
-         x="11.641666"
-         y="11.641666" />
+         width="56.091667"
+         id="rect80"
+         style="fill:#000000;fill-opacity:1;stroke-width:0.200504"
+         transform="rotate(-45.131072)" />
     </clipPath>
     <clipPath
-       id="clipPath84"
-       clipPathUnits="userSpaceOnUse">
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath84">
       <rect
-         transform="rotate(-45.131072)"
-         y="11.641666"
-         x="11.641666"
-         height="56.091671"
-         width="56.091671"
+         style="fill:#000000;stroke-width:0.264583"
          id="rect86"
-         style="fill:#000000;stroke-width:0.264583" />
+         width="56.091671"
+         height="56.091671"
+         x="11.641666"
+         y="11.641666"
+         transform="rotate(-45.131072)" />
     </clipPath>
     <clipPath
-       id="clipPath90"
-       clipPathUnits="userSpaceOnUse">
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath90">
       <rect
-         transform="rotate(-45.131072)"
-         y="11.641666"
-         x="11.641666"
-         height="56.091671"
-         width="56.091671"
+         style="fill:#000000;stroke-width:0.264583"
          id="rect92"
-         style="fill:#000000;stroke-width:0.264583" />
+         width="56.091671"
+         height="56.091671"
+         x="11.641666"
+         y="11.641666"
+         transform="rotate(-45.131072)" />
     </clipPath>
     <clipPath
-       id="clipPath96"
-       clipPathUnits="userSpaceOnUse">
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath96">
       <rect
-         transform="rotate(-45.131072)"
-         y="11.641666"
-         x="11.641666"
-         height="56.091671"
-         width="56.091671"
+         style="fill:#000000;stroke-width:0.264583"
          id="rect98"
-         style="fill:#000000;stroke-width:0.264583" />
+         width="56.091671"
+         height="56.091671"
+         x="11.641666"
+         y="11.641666"
+         transform="rotate(-45.131072)" />
     </clipPath>
     <clipPath
-       id="clipPath102"
-       clipPathUnits="userSpaceOnUse">
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath102">
       <rect
-         transform="rotate(-45.131072)"
-         y="11.641666"
-         x="11.641666"
-         height="56.091671"
-         width="56.091671"
+         style="fill:#000000;stroke-width:0.264583"
          id="rect104"
-         style="fill:#000000;stroke-width:0.264583" />
+         width="56.091671"
+         height="56.091671"
+         x="11.641666"
+         y="11.641666"
+         transform="rotate(-45.131072)" />
     </clipPath>
   </defs>
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.01"
-     inkscape:cx="196.69542"
-     inkscape:cy="127.85967"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:window-width="1299"
-     inkscape:window-height="713"
-     inkscape:window-x="67"
+     inkscape:window-maximized="1"
      inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="67"
+     inkscape:window-height="713"
+     inkscape:window-width="1299"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="127.85967"
+     inkscape:cx="27.883539"
+     inkscape:zoom="1.01"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -109,94 +109,94 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-11.641666,-11.641666)"
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1"
+     transform="translate(-11.641666,-11.641666)">
     <rect
-       clip-path="url(#clipPath78)"
-       style="fill:#004000;fill-opacity:1;stroke-width:0.264583"
-       id="rect24"
-       width="79.375"
-       height="79.375"
-       x="16.438953"
+       transform="rotate(45.131072)"
        y="-39.815899"
-       transform="rotate(45.131072)" />
+       x="16.438953"
+       height="79.375"
+       width="79.375"
+       id="rect24"
+       style="fill:#003000;fill-opacity:1;stroke-width:0.264583"
+       clip-path="url(#clipPath78)" />
     <rect
-       clip-path="url(#clipPath84)"
-       style="fill:#008000;fill-opacity:1;stroke-width:0.28262"
-       id="rect26"
-       width="71.4375"
-       height="71.4375"
-       x="20.407703"
+       transform="rotate(45.131072)"
        y="-35.847149"
-       transform="rotate(45.131072)" />
+       x="20.407703"
+       height="71.4375"
+       width="71.4375"
+       id="rect26"
+       style="fill:#006000;fill-opacity:1;stroke-width:0.28262"
+       clip-path="url(#clipPath84)" />
     <rect
-       clip-path="url(#clipPath90)"
-       style="fill:#004000;fill-opacity:1;stroke-width:0.312146"
-       id="rect28"
-       width="63.5"
-       height="63.5"
-       x="24.376453"
+       transform="rotate(45.131072)"
        y="-31.878397"
-       transform="rotate(45.131072)" />
+       x="24.376453"
+       height="63.5"
+       width="63.5"
+       id="rect28"
+       style="fill:#003000;fill-opacity:1;stroke-width:0.312146"
+       clip-path="url(#clipPath90)" />
     <rect
-       clip-path="url(#clipPath96)"
-       style="fill:#008000;fill-opacity:1;stroke-width:0.290548"
-       id="rect30"
-       width="55.5625"
-       height="55.5625"
-       x="28.345203"
+       transform="rotate(45.131072)"
        y="-27.909647"
-       transform="rotate(45.131072)" />
+       x="28.345203"
+       height="55.5625"
+       width="55.5625"
+       id="rect30"
+       style="fill:#006000;fill-opacity:1;stroke-width:0.290548"
+       clip-path="url(#clipPath96)" />
     <rect
-       clip-path="url(#clipPath102)"
-       style="fill:#004000;fill-opacity:1;stroke-width:0.27827"
-       id="rect32"
-       width="47.625"
-       height="47.625"
-       x="32.313953"
+       transform="rotate(45.131072)"
        y="-23.940897"
-       transform="rotate(45.131072)" />
+       x="32.313953"
+       height="47.625"
+       width="47.625"
+       id="rect32"
+       style="fill:#003000;fill-opacity:1;stroke-width:0.27827"
+       clip-path="url(#clipPath102)" />
     <rect
-       style="fill:#008000;fill-opacity:1;stroke-width:0.272177"
-       id="rect34"
-       width="39.6875"
-       height="39.6875"
-       x="36.282703"
+       transform="rotate(45.131072)"
        y="-19.972147"
-       transform="rotate(45.131072)" />
+       x="36.282703"
+       height="39.6875"
+       width="39.6875"
+       id="rect34"
+       style="fill:#006000;fill-opacity:1;stroke-width:0.272177" />
     <rect
-       style="fill:#004000;fill-opacity:1;stroke-width:0.251219"
-       id="rect36"
-       width="31.75"
-       height="31.75"
-       x="40.251453"
+       transform="rotate(45.131072)"
        y="-16.003397"
-       transform="rotate(45.131072)" />
+       x="40.251453"
+       height="31.75"
+       width="31.75"
+       id="rect36"
+       style="fill:#003000;fill-opacity:1;stroke-width:0.251219" />
     <rect
-       style="fill:#008000;fill-opacity:1;stroke-width:0.2711"
-       id="rect38"
-       width="23.8125"
-       height="23.8125"
-       x="44.220203"
+       transform="rotate(45.131072)"
        y="-12.034648"
-       transform="rotate(45.131072)" />
+       x="44.220203"
+       height="23.8125"
+       width="23.8125"
+       id="rect38"
+       style="fill:#006000;fill-opacity:1;stroke-width:0.2711" />
     <rect
-       style="fill:#004000;fill-opacity:1;stroke-width:0.226776"
-       id="rect40"
-       width="15.875"
-       height="15.875"
-       x="48.188953"
+       transform="rotate(45.131072)"
        y="-8.0658979"
-       transform="rotate(45.131072)" />
+       x="48.188953"
+       height="15.875"
+       width="15.875"
+       id="rect40"
+       style="fill:#003000;fill-opacity:1;stroke-width:0.226776" />
     <rect
-       style="fill:#008000;fill-opacity:1;stroke-width:0.191041"
-       id="rect42"
-       width="7.9375"
-       height="7.9375"
-       x="52.157703"
+       transform="rotate(45.131072)"
        y="-4.0971479"
-       transform="rotate(45.131072)" />
+       x="52.157703"
+       height="7.9375"
+       width="7.9375"
+       id="rect42"
+       style="fill:#006000;fill-opacity:1;stroke-width:0.191041" />
   </g>
 </svg>
