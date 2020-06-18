@@ -1,0 +1,25 @@
+{
+  "name": "quizGame",
+  "version": "1.0.0",
+  "description": "An educational game that can run in your browser",
+  "main": "quizServer.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel dev -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateiFMandache/quizGame.git"
+  },
+  "keywords": ["Quiz", "Maths", "Science"],
+  "author": "Matei F. Mandache <matei.mandache@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MateiFMandache/quizGame/issues"
+  },
+  "homepage": "https://github.com/MateiFMandache/quizGame#readme"
+}
