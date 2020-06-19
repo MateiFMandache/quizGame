@@ -3,7 +3,7 @@
   /* use root font size as a responsive unit for the size of our objects */
   font-size: min(2vw, 3vh);
   font-family: "Hammersmith One", sans-serif;
-  background: url("./background.png");
+  background: url("./pngs/background.png");
   color: gold;
   text-align: center;
 }

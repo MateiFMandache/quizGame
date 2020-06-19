@@ -30,6 +30,9 @@ http.createServer((req, res) => {
           case "png":
             res.writeHead(200, {"Content-Type": "image/png"});
             break;
+          case "svg":
+            res.writeHead(200, {"Content-Type": "image/svg+xml"});
+            break;
           default:
             res.writeHead(200, {"Content-Type": "text/plain"});
         }

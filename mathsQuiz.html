@@ -8,7 +8,7 @@
   <body>
     <h1>Maths quiz</h1>
     <div id="settings-and-start">
-      <button>Settings</button> <button>Start</button>
+      <button>Settings</button> <button id="start-button">Start</button>
     </div>
     <div id="quiz-area" style="display: none;">
       <div id="question-area">
@@ -16,9 +16,12 @@
         <input type="text" id="answer-box">
       </div>
       <div id="image-area">
-        <img src="./smiley.png" id="you">
-        <img src="./dinosaur.png" id="dinosaur">
+        <img src="./svgs/smiley.svg"
+          onerror="this.src='./pngs/smiley.png'" id="you" style="width: 6rem;">
+        <img src="./svgs/dinosaur.svg"
+          onerror="this.src='./pngs/dinosaur.png'" id="dinosaur" style="width: 9rem;">
       </div>
     </div>
+    <script src="./mathsQuiz.js"></script>
   </body>
 </html>
