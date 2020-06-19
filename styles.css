@@ -30,3 +30,9 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+@keyframes winning-dance {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(12deg);}
+  75% {transform: rotate(-12deg);}
+  100% {transform: rotate(0deg);}
+}

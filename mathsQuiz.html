@@ -8,12 +8,13 @@
   <body>
     <h1>Maths quiz</h1>
     <div id="settings-and-start">
-      <button>Settings</button> <button id="start-button">Start</button>
+      <button>Settings</button> <button onclick="start()">Start</button>
     </div>
     <div id="quiz-area" style="display: none;">
       <div id="question-area">
         <p id="question"></p>
         <input type="text" id="answer-box">
+        <button id="submit-button">Submit answer</button>
       </div>
       <div id="image-area">
         <img src="./svgs/smiley.svg"
