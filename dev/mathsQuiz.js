@@ -74,8 +74,8 @@ var currentQuestion = new Question();
 currentQuestion.display();
 
 function Question() {
-  var num1 = 1 + Math.floor(12 * Math.random());
-  var num2 = 1 + Math.floor(12 * Math.random());
+  var num1 = 2 + Math.floor(11 * Math.random());
+  var num2 = 2 + Math.floor(11 * Math.random());
   this.prompt = `What is ${num1} times ${num2}?`;
   this.answer = num1 * num2;
   this.display = function() {
