@@ -20,6 +20,12 @@ a {
 h1 {
   font-size: 4rem;
 }
+p {
+  font-size: 3rem;
+}
+.clickable {
+  cursor: pointer;
+}
 #image-area {
   background-color: rgba(0, 0, 0, 0.7);
   width: 25rem;
