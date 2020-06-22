@@ -7,8 +7,7 @@
   color: gold;
   text-align: center;
 }
-body {
-  display: flex;
+#quiz-area {
   flex-direction: column;
   align-items: center;
 }
@@ -34,6 +33,17 @@ li {
   font-size: 3rem;
   margin: 1.5rem;
 }
+#answer-box, #submit-button {
+  border-radius: 0.5rem;
+  border-color: Gold;
+  border-style: solid;
+  font-size: 2rem;
+  background-color: navy;
+  color: gold;
+}
+#answer-box {
+  width: 18rem;
+}
 #image-area {
   background-color: rgba(0, 0, 0, 0.7);
   width: 25rem;
@@ -43,6 +53,7 @@ li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 1rem;
 }
 @keyframes winning-dance {
   0% {transform: rotate(0deg);}
