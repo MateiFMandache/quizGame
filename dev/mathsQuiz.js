@@ -10,7 +10,12 @@ let submitButton = document.getElementById("submit-button");
 let question = document.getElementById("question");
 let you = document.getElementById("you");
 let dinosaur = document.getElementById("dinosaur");
+let winner = document.getElementById("winner");
+let endingMenu = document.getElementById("ending-menu");
+let questionArea = document.getElementById("question-area");
+let settings = document.getElementById("settings");
 let sheet = document.styleSheets[0];
+let currentQuestion;
 
 function start() {
   document.getElementById("settings-and-start").style = "display: none;";
@@ -26,6 +31,23 @@ function start() {
   // reset sizes of characters
   dinosaur.style = "width: 9rem;";
   you.style = "width: 6rem;";
+  // hide ending ending menu
+  endingMenu.style = "display: none;";
+  // show question area
+  questionArea.style = "display: block;";
+  // show first question
+  currentQuestion = new Question();
+  currentQuestion.display();
+  // enable button
+  submitButton.disabled = false;
+}
+
+function toggleSettingsVisibility() {
+  if (settings.style.display == "none") {
+    settings.style = "display: grid;"
+  } else {
+    settings.style = "display: none;"
+  }
 }
 
 function resize(currentScore, finalScore, duration, callback) {
@@ -61,7 +83,9 @@ function updateScore(value, animate=true) {
 
 function doNextThing() {
   if (score == 10) {
-    question.innerHTML = "You won!";
+    endingMenu.style = "display: block;";
+    questionArea.style = "display: none;";
+    winner.innerHTML = "You won!";
     sheet.insertRule(`#you {
       animation-timing-function: linear;
       animation-name: winning-dance;
@@ -69,7 +93,9 @@ function doNextThing() {
       animation-iteration-count: infinite;
     }`, sheet.cssRules.length);
   } else if (score == -10) {
-    question.innerHTML = "Quizasaurus has defeated you!";
+    endingMenu.style = "display: block;";
+    questionArea.style = "display: none;";
+    winner.innerHTML = "Quizasaurus has defeated you!";
     document.styleSheets[0].insertRule(`#dinosaur {
       animation-timing-function: linear;
       animation-name: winning-dance;
@@ -99,16 +125,13 @@ function evaluateAnswer() {
   }
 }
 
-var currentQuestion = new Question();
-currentQuestion.display();
-
 function Question() {
   var num1 = 2 + Math.floor((maxNumber-1) * Math.random());
   var num2 = 2 + Math.floor((maxNumber-1) * Math.random());
   this.prompt = `What is ${num1} times ${num2}?`;
   this.answer = num1 * num2;
   this.display = function() {
-    question.innerHTML = currentQuestion.prompt;
+    question.innerHTML = this.prompt;
     submitButton.addEventListener("click", evaluateAnswer);
   }
 }

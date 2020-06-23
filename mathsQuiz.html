@@ -8,9 +8,50 @@
   <body>
     <div id="settings-and-start">
       <h1>Times table quiz</h1>
-      <ul id="menu">
-        <li class="clickable">Settings</li>
-        <li onclick="start()" class="clickable">Start</li>
+      <ul>
+        <li onclick="toggleSettingsVisibility()">Settings</li>
+        <li onclick="start()">Start</li>
+      </ul>
+      <div id="settings" style="display: none;">
+        <div id="penalty">
+          <p id="penalty-text">Wrong answer penalty</p>
+          <label for="1">
+            <input id="1" type="radio" value="1" name="penalty">
+            <span class="radio"></span>1
+          </label>
+          <label for="2">
+            <input id="2" type="radio" value="2" name="penalty">
+            <span class="radio"></span>2
+          </label>
+          <label for="3">
+            <input id="3" type="radio" value="3" name="penalty">
+            <span class="radio"></span>3
+          </label>
+          <label for="5">
+            <input id="5" type="radio" value="5" name="penalty">
+            <span class="radio"></span>5
+          </label>
+        </div>
+        <div id="timer">
+          <label for="timer-checkbox">
+            <input type="checkbox" id="timer-checkbox" name="timer" value="on">
+            Timer
+          </label>
+        </div>
+        <div id="time">
+          <label for="time-entry">
+            Time
+            <input type="text" id="time-entry" name="time" value="10">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div id="ending-menu" style="display: none;">
+      <p id="winner"><p>
+      <ul>
+        <li onclick="start()">Try again</li>
+        <li>Change settings</li>
+        <li><a href="./home.html">Quiz home</a></li>
       </ul>
     </div>
     <div id="quiz-area" style="display: none;">
