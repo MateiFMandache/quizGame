@@ -50,8 +50,6 @@ li {
   grid-template-areas:
               "penalty timer"
               "penalty time";
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 150px 1fr;
 }
 #penalty {
   grid-area: penalty;
@@ -71,32 +69,72 @@ li {
   margin: 0;
 }
 #settings input {
-  border-color: var(--brown);
-  border-style: solid;
+  border: 0.15rem solid var(--brown);
   border-radius: 0.5rem;
   font-size: 2rem;
 }
 #time-entry {
   background-color: rgba(0, 0, 0, 0);
-  width: 8rem;
+  width: 6rem;
   color: inherit;
 }
 /* create custom checkbox and radio buttons */
 /* hide original inputs */
-input[type="radio"] {
+input[type="radio"], input[type="checkbox"] {
   opacity: 0;
   width: 0;
 }
-input[type="radio"] + span {
+/* round button */
+.radio {
+  display: inline-block;
   box-sizing: border-box;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
-  border-width: 0.3rem;
-  border-style: solid;
-  border-color: var(--brown);
+  border: 0.15rem solid var(--brown);
 }
-
+/* selecter, hidden by default */
+.radio::after {
+  display: none;
+  position: relative;
+  content: "";
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--brown);
+  border-radius: 50%;
+}
+/* show slecter when checked */
+input:checked + .radio::after {
+  display: block;
+}
+/* square to check */
+.checkbox {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.15rem solid var(--brown);
+}
+/* tick, hidden by default */
+.checkbox::after {
+  display: none;
+  position: relative;
+  content: "";
+  height: 0.35rem;
+  width: 0.8rem;
+  top: 0.2rem;
+  left: 0.1rem;
+  border-color: var(--brown);
+  border-width: 0 0 0.3rem 0.3rem;
+  border-style: solid;
+  transform: rotate(-45deg);
+}
+/* show tick when checked */
+input:checked + .checkbox::after {
+  display: block;
+}
 #answer-box, #submit-button {
   border-radius: 0.5rem;
   border-color: Gold;
