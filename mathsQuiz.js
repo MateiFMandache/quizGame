@@ -6,6 +6,7 @@ var penalty = 2;
 var maxNumber = 12;
 var timer = false;
 var time = 10;
+var secondsLeft;
 
 var answerBox = document.getElementById("answer-box");
 var submitButton = document.getElementById("submit-button");
@@ -16,8 +17,44 @@ var winner = document.getElementById("winner");
 var endingMenu = document.getElementById("ending-menu");
 var questionArea = document.getElementById("question-area");
 var settings = document.getElementById("settings");
+var clock = document.getElementById("clock");
+var clockNumber = document.getElementById("seconds-left");
 var sheet = document.styleSheets[0];
 var currentQuestion = void 0;
+
+// Change variables penalty, timer and time when they are changed in
+// settings.
+
+var penaltyButtons = document.querySelectorAll("input[name='penalty']");
+var timerCheckbox = document.getElementById("timer-checkbox");
+var timeEntry = document.getElementById("time-entry");
+// Default settings: no timer, 10 seconds, penalty is 2
+timeEntry.value = 10;
+timerCheckbox.checked = false;
+document.getElementById("2").checked = true;
+
+var _loop = function _loop(i) {
+  var button = penaltyButtons[i];
+  button.addEventListener("click", function () {
+    penalty = Number(button.value);
+  });
+};
+
+for (var i = 0; i < penaltyButtons.length; i++) {
+  _loop(i);
+}
+timerCheckbox.addEventListener("change", function () {
+  timer = timerCheckbox.checked;
+  // shade in time entry if no timer
+  if (timer) {
+    timeEntry.style = "background-color: rgba(48, 24, 0, 0);";
+  } else {
+    timeEntry.style = "background-color: rgba(48, 24, 0, 0.7);";
+  }
+});
+timeEntry.addEventListener("change", function () {
+  time = parseInt(timeEntry.value);
+});
 
 function start() {
   document.getElementById("settings-and-start").style = "display: none;";
@@ -50,6 +87,13 @@ function toggleSettingsVisibility() {
   }
 }
 
+function goToSettings() {
+  settings.style = "display: grid;";
+  endingMenu.style = "display: none;";
+  document.getElementById("settings-and-start").style = "display: flex;";
+  document.getElementById("quiz-area").style = "display: none;";
+}
+
 function resize(currentScore, finalScore, duration, callback) {
   /**
    * Resizes the smiley and the dinosaur, starting with appropriate
@@ -75,8 +119,6 @@ function resize(currentScore, finalScore, duration, callback) {
 }
 
 function updateScore(value) {
-  var animate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
   // Score is capped between 10 and -10
   value = Math.min(Math.max(value, -10), 10);
   // Resize in accordance with new score
@@ -87,26 +129,26 @@ function updateScore(value) {
 function doNextThing() {
   if (score == 10) {
     endingMenu.style = "display: block;";
+    clock.style = "display: none;";
     questionArea.style = "display: none;";
     winner.innerHTML = "You won!";
     sheet.insertRule("#you {\n      animation-timing-function: linear;\n      animation-name: winning-dance;\n      animation-duration: 1.2s;\n      animation-iteration-count: infinite;\n    }", sheet.cssRules.length);
   } else if (score == -10) {
     endingMenu.style = "display: block;";
+    clock.style = "display: none;";
     questionArea.style = "display: none;";
     winner.innerHTML = "Quizasaurus has defeated you!";
     document.styleSheets[0].insertRule("#dinosaur {\n      animation-timing-function: linear;\n      animation-name: winning-dance;\n      animation-duration: 1.2s;\n      animation-iteration-count: infinite;\n    }", sheet.cssRules.length);
   } else {
     currentQuestion = new Question();
     currentQuestion.display();
-    submitButton.disabled = false;
   }
 }
 
 function evaluateAnswer() {
   if (answerBox.value !== "") {
-    submitButton.disabled = true;
+    currentQuestion.deactivate();
     var receivedAnswer = answerBox.value;
-    answerBox.value = "";
     var actualAnswer = currentQuestion.answer;
     if (receivedAnswer == actualAnswer) {
       question.innerHTML = "Correct!";
@@ -123,10 +165,40 @@ function Question() {
   var num2 = 2 + Math.floor((maxNumber - 1) * Math.random());
   this.prompt = "What is " + num1 + " times " + num2 + "?";
   this.answer = num1 * num2;
+  this.active = true;
+  this.deactivate = function () {
+    this.active = false;
+    submitButton.disabled = true;
+    answerBox.value = "";
+    answerBox.disabled = true;
+  };
   this.display = function () {
     question.innerHTML = this.prompt;
+    submitButton.disabled = false;
+    answerBox.disabled = false;
     submitButton.addEventListener("click", evaluateAnswer);
+    if (timer) {
+      secondsLeft = time;
+      clock.style = "display: flex;";
+      decreaseClockNumber();
+    }
   };
+}
+
+function decreaseClockNumber() {
+  if (currentQuestion.active) {
+    if (secondsLeft > 0) {
+      secondsLeft -= 1;
+      clockNumber.innerHTML = secondsLeft.toString();
+      // set font size to an appropriate size given the number of digits
+      clockNumber.style = "font-size: " + 3 / secondsLeft.toString().length + "rem;";
+      setTimeout(decreaseClockNumber, 1000);
+    } else {
+      currentQuestion.deactivate();
+      question.innerHTML = "You ran out of time!";
+      updateScore(score - penalty);
+    }
+  }
 }
 
 answerBox.addEventListener("keydown", function (event) {

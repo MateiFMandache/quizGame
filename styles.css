@@ -59,6 +59,7 @@ li {
   justify-content: center;
 }
 #timer {
+  align-self: end;
   grid-area: timer;
 }
 #time {
@@ -74,7 +75,7 @@ li {
   font-size: 2rem;
 }
 #time-entry {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(48, 24, 0, 0.7);
   width: 6rem;
   color: inherit;
 }
@@ -93,7 +94,7 @@ input[type="radio"], input[type="checkbox"] {
   border-radius: 50%;
   border: 0.15rem solid var(--brown);
 }
-/* selecter, hidden by default */
+/* selector, hidden by default */
 .radio::after {
   display: none;
   position: relative;
@@ -105,7 +106,7 @@ input[type="radio"], input[type="checkbox"] {
   background-color: var(--brown);
   border-radius: 50%;
 }
-/* show slecter when checked */
+/* show slector when checked */
 input:checked + .radio::after {
   display: block;
 }
@@ -156,6 +157,21 @@ input:checked + .checkbox::after {
   align-items: center;
   justify-content: center;
   margin: 1rem;
+}
+#clock {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--brown);
+  align-items: center;
+  justify-content: center;
+}
+#winner {
+  font-size: 3rem;
 }
 @keyframes winning-dance {
   0% {transform: rotate(0deg);}

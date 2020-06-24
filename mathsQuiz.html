@@ -11,6 +11,7 @@
       <ul>
         <li onclick="toggleSettingsVisibility()">Settings</li>
         <li onclick="start()">Start</li>
+        <li><a href="./home.html">Back</a></li>
       </ul>
       <div id="settings" style="display: none;">
         <div id="penalty">
@@ -50,7 +51,7 @@
       <p id="winner"><p>
       <ul>
         <li onclick="start()">Try again</li>
-        <li>Change settings</li>
+        <li onclick="goToSettings()">Change settings</li>
         <li><a href="./home.html">Quiz home</a></li>
       </ul>
     </div>
@@ -64,8 +65,12 @@
         <img src="./svgs/smiley.svg"
           onerror="this.src='./pngs/smiley.png'" id="you" style="width: 6rem;">
         <img src="./svgs/dinosaur.svg"
-          onerror="this.src='./pngs/dinosaur.png'" id="dinosaur" style="width: 9rem;">
+          onerror="this.src='./pngs/dinosaur.png'" id="dinosaur"
+          style="width: 9rem;">
       </div>
+    </div>
+    <div id="clock" style="display: none;">
+      <p id="seconds-left"></p>
     </div>
     <script src="./mathsQuiz.js"></script>
   </body>
