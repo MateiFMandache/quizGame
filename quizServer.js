@@ -24,6 +24,9 @@ http.createServer((req, res) => {
           case "js":
             res.writeHead(200, {"Content-Type": "application/javascript"});
             break;
+          case "json":
+            res.writeHead(200, {"Content-Type": "application/json"});
+            break;
           case "ico":
             res.writeHead(200, {"Content-Type": "image/x-icon"});
             break;
@@ -33,6 +36,7 @@ http.createServer((req, res) => {
           case "svg":
             res.writeHead(200, {"Content-Type": "image/svg+xml"});
             break;
+          case "txt":
           default:
             res.writeHead(200, {"Content-Type": "text/plain"});
         }

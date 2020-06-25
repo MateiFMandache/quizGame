@@ -136,7 +136,7 @@ input:checked + .radio::after {
 input:checked + .checkbox::after {
   display: block;
 }
-#answer-box, #submit-button, #quit{
+#answer-box, #quiz-list, button {
   border-radius: 0.5rem;
   border-color: Gold;
   border-style: solid;
