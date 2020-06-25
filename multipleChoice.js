@@ -3,7 +3,6 @@
 var score = 0;
 var animationTime = 1000;
 var penalty = 2;
-var maxNumber = 12;
 var timer = false;
 var time = 10;
 var secondsLeft;
@@ -20,6 +19,9 @@ var clock = document.getElementById("clock");
 var clockNumber = document.getElementById("seconds-left");
 var sheet = document.styleSheets[0];
 var quitButton = document.getElementById("quit");
+var button1 = document.getElementById("option1");
+var button2 = document.getElementById("option2");
+var button3 = document.getElementById("option3");
 var currentQuestion = void 0;
 // an object representing the current quiz we are doing
 var quiz = null;
@@ -43,7 +45,7 @@ getQuizList.onreadystatechange = function () {
 };
 getQuizList.send();
 
-// Request
+// Get quiz when user selects a quiz, and store in quiz variable
 quizList.addEventListener("change", function () {
   if (this.value !== "") {
     var getQuiz = new XMLHttpRequest();
@@ -51,7 +53,6 @@ quizList.addEventListener("change", function () {
     getQuiz.onreadystatechange = function () {
       if (getQuiz.readyState == 4 && getQuiz.status == 200) {
         quiz = JSON.parse(getQuiz.responseText);
-        console.log(quiz.questions);
       } else if (getQuiz.readyState == 4 && getQuiz.status == 404) {
         alert("quiz not found");
       }
@@ -197,42 +198,47 @@ function doNextThing() {
   }
 }
 
-function evaluateAnswer() {
-  if (answerBox.value !== "") {
-    var receivedAnswer = answerBox.value;
-    var actualAnswer = currentQuestion.answer;
-    currentQuestion.deactivate();
-    if (receivedAnswer == actualAnswer) {
-      question.innerHTML = "Correct!";
-      updateScore(score + 1);
-    } else {
-      question.innerHTML = "Wrong!";
-      updateScore(score - penalty);
-    }
+function evaluateAnswer(receivedAnswer) {
+  var actualAnswer = currentQuestion.answer;
+  currentQuestion.deactivate();
+  if (receivedAnswer == actualAnswer) {
+    question.innerHTML = "Correct!";
+    updateScore(score + 1);
+  } else {
+    question.innerHTML = "Wrong!";
+    updateScore(score - penalty);
   }
 }
 
 function Question() {
   /**
-   * Constructor for a times table question.
+   * Constructor for a multiple choice question
    */
-  var num1 = 2 + Math.floor((maxNumber - 1) * Math.random());
-  var num2 = 2 + Math.floor((maxNumber - 1) * Math.random());
-  this.prompt = "What is " + num1 + " times " + num2 + "?";
-  this.answer = num1 * num2;
+  var questionData = quiz[Math.floor(Math.random() * quiz.length)];
+  this.prompt = questionData.question;
+  // Get a random permutation of 1, 2, 3 to tell us which answer goes
+  // where
+  var buttons = [1, 2, 3];
+  var perm = [];
+  for (var i = 0; i < 3; i++) {
+    perm.push(buttons.splice(Math.floor(Math.random() * (3 - i)), 1).pop());
+  }
+  this.answer = perm[0];
+  document.getElementById("option" + perm[0]).innerHTML = questionData.correctAnswer;
+  document.getElementById("option" + perm[1]).innerHTML = questionData.wrongAnswers[0];
+  document.getElementById("option" + perm[2]).innerHTML = questionData.wrongAnswers[1];
   this.active = true;
   this.deactivate = function () {
     this.active = false;
-    submitButton.disabled = true;
-    answerBox.value = "";
-    answerBox.disabled = true;
+    button1.disabled = true;
+    button2.disabled = true;
+    button3.disabled = true;
   };
   this.display = function () {
     question.innerHTML = this.prompt;
-    submitButton.disabled = false;
-    answerBox.disabled = false;
-    answerBox.focus();
-    submitButton.addEventListener("click", evaluateAnswer);
+    button1.disabled = false;
+    button2.disabled = false;
+    button3.disabled = false;
     if (timer) {
       secondsLeft = time;
       clock.style = "display: flex;";

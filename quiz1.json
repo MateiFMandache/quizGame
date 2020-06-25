@@ -1,10 +1,7 @@
-{
-  "name": "Henry8",
-  "questions": [
-    {
-      "question": "How many wives did Henry VIII have?",
-      "correctAnswer": "6",
-      "wrongAnswers": ["4", "8"]
-    }
-  ]
-}
+[
+  {
+    "question": "How many wives did Henry VIII have?",
+    "correctAnswer": "6",
+    "wrongAnswers": ["4", "8"]
+  }
+]

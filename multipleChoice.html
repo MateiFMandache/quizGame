@@ -10,7 +10,7 @@
       <h1>Multiple choice quizzes</h1>
       <ul>
         <li>
-          <select id="quiz-list">
+          Quiz:<select id="quiz-list">
           </select>
         </li>
         <li onclick="start()">Start</li>
@@ -62,9 +62,12 @@
     <div id="quiz-area" style="display: none;">
       <div id="question-area">
         <p id="question"></p>
-        <button id="option1" onclick="select(1)"></button>
-        <button id="option2" onclick="select(2)"></button>
-        <button id="option3" onclick="select(3)"></button>
+        <button class="answer-button" id="option1" onclick="evaluateAnswer(1)">
+        </button>
+        <button class="answer-button" id="option2" onclick="evaluateAnswer(2)">
+        </button>
+        <button class="answer-button" id="option3" onclick="evaluateAnswer(3)">
+        </button>
       </div>
       <div id="image-area">
         <img src="./svgs/smiley.svg"
