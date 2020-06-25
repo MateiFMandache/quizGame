@@ -193,10 +193,24 @@ function Question() {
 function decreaseClockNumber() {
   if (currentQuestion.active) {
     if (secondsLeft > 0) {
-      secondsLeft -= 1;
+      secondsLeft--;
       clockNumber.innerHTML = secondsLeft.toString();
+      // Set color of timer depending on seconds left
+      switch (secondsLeft) {
+        case 2:
+          clockNumber.style.color = "#FF7F00";
+          break;
+        case 1:
+          clockNumber.style.color = "#FF3F00";
+          break;
+        case 0:
+          clockNumber.style.color = "#FF0000";
+          break;
+        default:
+          clockNumber.style.color = "var(--brown)";
+      }
       // set font size to an appropriate size given the number of digits
-      clockNumber.style = `font-size: ${3/(secondsLeft.toString().length)}rem;`;
+      clockNumber.style.fontSize = `${3/(secondsLeft.toString().length)}rem`;
       setTimeout(decreaseClockNumber, 1000);
     } else {
       currentQuestion.deactivate();

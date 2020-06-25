@@ -166,7 +166,6 @@ input:checked + .checkbox::after {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  color: var(--brown);
   align-items: center;
   justify-content: center;
 }
