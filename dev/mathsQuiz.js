@@ -151,9 +151,9 @@ function doNextThing() {
 
 function evaluateAnswer() {
   if (answerBox.value !== "") {
-    currentQuestion.deactivate();
     var receivedAnswer = answerBox.value;
     var actualAnswer = currentQuestion.answer;
+    currentQuestion.deactivate();
     if (receivedAnswer == actualAnswer) {
       question.innerHTML = "Correct!";
       updateScore(score + 1);
@@ -180,6 +180,7 @@ function Question() {
     question.innerHTML = this.prompt;
     submitButton.disabled = false;
     answerBox.disabled = false;
+    answerBox.focus();
     submitButton.addEventListener("click", evaluateAnswer);
     if (timer) {
       secondsLeft = time;
