@@ -136,7 +136,7 @@ input:checked + .radio::after {
 input:checked + .checkbox::after {
   display: block;
 }
-#answer-box, #submit-button {
+#answer-box, #submit-button, #quit{
   border-radius: 0.5rem;
   border-color: Gold;
   border-style: solid;
@@ -157,6 +157,11 @@ input:checked + .checkbox::after {
   align-items: center;
   justify-content: center;
   margin: 1rem;
+}
+#quit {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 #clock {
   background-color: rgba(255, 255, 255, 0.7);

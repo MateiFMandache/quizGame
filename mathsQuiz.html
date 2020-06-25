@@ -11,7 +11,7 @@
       <ul>
         <li onclick="toggleSettingsVisibility()">Settings</li>
         <li onclick="start()">Start</li>
-        <li><a href="./home.html">Back</a></li>
+        <li><a href="./home.html">Quiz home</a></li>
       </ul>
       <div id="settings" style="display: none;">
         <div id="penalty">
@@ -68,9 +68,10 @@
           onerror="this.src='./pngs/dinosaur.png'" id="dinosaur"
           style="width: 9rem;">
       </div>
-    </div>
-    <div id="clock" style="display: none;">
-      <p id="seconds-left">3</p>
+      <div id="clock" style="display: none;">
+        <p id="seconds-left"></p>
+      </div>
+      <button id="quit" onclick="quit()">Quit</button>
     </div>
     <script src="./mathsQuiz.js"></script>
   </body>
