@@ -99,6 +99,10 @@ timeEntry.addEventListener("change", function () {
 });
 
 function start() {
+  if (quiz == null) {
+    alert("You need to select a quiz");
+    return;
+  }
   // Actions to be performed when user starts quiz
   document.getElementById("settings-and-start").style = "display: none;";
   document.getElementById("quiz-area").style = "display: flex;";
@@ -219,14 +223,11 @@ function Question() {
   // Get a random permutation of 1, 2, 3 to tell us which answer goes
   // where
   var buttons = [1, 2, 3];
-  var perm = [];
+  this.perm = [];
   for (var i = 0; i < 3; i++) {
-    perm.push(buttons.splice(Math.floor(Math.random() * (3 - i)), 1).pop());
+    this.perm.push(buttons.splice(Math.floor(Math.random() * (3 - i)), 1).pop());
   }
-  this.answer = perm[0];
-  document.getElementById("option" + perm[0]).innerHTML = questionData.correctAnswer;
-  document.getElementById("option" + perm[1]).innerHTML = questionData.wrongAnswers[0];
-  document.getElementById("option" + perm[2]).innerHTML = questionData.wrongAnswers[1];
+  this.answer = this.perm[0];
   this.active = true;
   this.deactivate = function () {
     this.active = false;
@@ -236,6 +237,9 @@ function Question() {
   };
   this.display = function () {
     question.innerHTML = this.prompt;
+    document.getElementById("option" + this.perm[0]).innerHTML = questionData.correctAnswer;
+    document.getElementById("option" + this.perm[1]).innerHTML = questionData.wrongAnswers[0];
+    document.getElementById("option" + this.perm[2]).innerHTML = questionData.wrongAnswers[1];
     button1.disabled = false;
     button2.disabled = false;
     button3.disabled = false;

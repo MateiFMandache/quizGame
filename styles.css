@@ -144,6 +144,12 @@ input:checked + .checkbox::after {
   background-color: navy;
   color: gold;
 }
+button {
+  cursor: pointer;
+}
+button[disabled] {
+  cursor: default;
+}
 #answer-box {
   width: 18rem;
 }
